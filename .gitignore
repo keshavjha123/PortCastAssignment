@@ -1,0 +1,345 @@
+# PortCast Text Analysis API - .gitignore
+
+# ========================
+# Deployment & Production
+# ========================
+.env.production
+.env.local
+.env.staging
+
+# Keep deployment config files but ignore sensitive env files
+# railway.json - Keep (deployment config)
+# .env.railway - Keep (template with placeholder values)
+# Dockerfile.railway - Keep (deployment-optimized dockerfile)
+
+# ========================
+# Python
+# ========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test-results/
+.coverage_html/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ========================
+# FastAPI / Web Development
+# ========================
+# FastAPI specific
+*.db
+*.sqlite
+*.sqlite3
+
+# Static files
+static/
+media/
+
+# ========================
+# Docker
+# ========================
+# Docker files that shouldn't be tracked
+.dockerignore
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ========================
+# Database
+# ========================
+# PostgreSQL
+*.sql.backup
+*.sql.dump
+pg_data/
+postgres_data/
+pgdata/
+
+# Database logs
+postgresql.log
+postgres.log
+
+# ========================
+# IDE / Editor
+# ========================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================
+# OS Generated Files
+# ========================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ========================
+# Project Specific
+# ========================
+# Application logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# API Keys / Secrets (if any)
+secrets/
+.secrets
+*.pem
+*.key
+
+# Local configuration files
+config.local.py
+settings.local.py
+local_settings.py
+
+# Upload directories
+uploads/
+files/
+
+# Cache directories
+.cache/
+cache/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ========================
+# Development Tools
+# ========================
+# npm (if using any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Webpack
+.webpack/
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# ========================
+# Backup files
+# ========================
+*.backup
+*.bak
+*.old
+*.orig
+*.save
+
+# ========================
+# Generated Documentation
+# ========================
+site/
+doc/_build/
+docs/_build/
+_build/
+
+# ========================
+# Monitoring & Profiling
+# ========================
+*.prof
+*.profile
+
+
+DEPLOYMENT.md
