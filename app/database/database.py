@@ -7,8 +7,19 @@ from sqlalchemy.dialects.postgresql import TSVECTOR
 from sqlalchemy.sql import func
 
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost:5432/portcast_api")
-# Convert sync URL to async URL for asyncpg
-ASYNC_DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
+
+# Convert sync URL to async URL for asyncpg  
+# Handle both postgres:// and postgresql:// prefixes from cloud providers
+if DATABASE_URL.startswith("postgres://"):
+    ASYNC_DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://")
+elif DATABASE_URL.startswith("postgresql://"):
+    ASYNC_DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
+else:
+    ASYNC_DATABASE_URL = DATABASE_URL
+
+# Convert sslmode=require to ssl=require for asyncpg compatibility
+if "sslmode=require" in ASYNC_DATABASE_URL:
+    ASYNC_DATABASE_URL = ASYNC_DATABASE_URL.replace("sslmode=require", "ssl=require")
 
 engine = create_async_engine(
     ASYNC_DATABASE_URL,
