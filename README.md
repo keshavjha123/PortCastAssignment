@@ -58,7 +58,6 @@ PortCastAssignment/
 │       └── test_integration_coverage.py # Error handling integration tests
 ├── docker-compose.yml           # Multi-container orchestration
 ├── Dockerfile                   # API container definition
-├── init.sql                     # PostgreSQL initialization
 ├── requirements.txt             # Python dependencies
 ├── pytest.ini                  # Test configuration
 └── README.md                   # This file
@@ -107,7 +106,8 @@ docker-compose ps
 curl http://localhost:8000/health
 
 # 2. API Documentation (opens in browser)
-open http://localhost:8000/docs
+# Linux/Mac: open http://localhost:8000/docs
+# Windows: Start-Process "http://localhost:8000/docs"
 
 # 3. Test basic functionality
 curl -X POST http://localhost:8000/fetch
@@ -370,7 +370,6 @@ Ensure these files exist in your project root:
 - `docker-compose.yml` - Container orchestration
 - `Dockerfile` - API container definition  
 - `requirements.txt` - Python dependencies
-- `init.sql` - Database initialization script
 - `pytest.ini` - Test configuration
 
 ## 🔍 API Usage Examples
@@ -429,7 +428,6 @@ CREATE INDEX idx_paragraphs_search_vector ON paragraphs USING GIN (search_vector
 
 ### Volumes
 - `postgres_data`: Persistent database storage
-- `./init.sql`: Database initialization script
 
 ### Health Checks
 - API: `curl -f http://localhost:8000/health`
@@ -572,4 +570,6 @@ docker-compose exec api sh -c "cd /app && python -m pytest tests/ -v"
 - **DevOps & Deployment**: Set up Docker Hub integration and managed cloud deployment.
 - **Frontend Integration**: Conducted manual frontend checks to ensure API usability for evaluators.
 - **Manual Testing**: Performed hands-on testing of all API endpoints to validate functionality and reliability.
-- **API Selection**: Chose specific endpoints from Metaphorpsum and Free Dictionary APIs based on suitability and documentation.
+- **Deployment**: Deployed backend on Render (free tier), utilizing Aiven for managed PostgreSQL storage.
+- **Frontend**: The client application is deployed on Vercel, fully integrated with all backend API endpoints.
+
