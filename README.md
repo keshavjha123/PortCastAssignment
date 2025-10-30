@@ -2,6 +2,13 @@
 
 A high-performance REST API for fetching, storing, and analyzing text paragraphs with full-text search capabilities using FastAPI, PostgreSQL, and async/await patterns.
 
+### Viewing the Application
+
+You can explore the API documentation interactively or access the deployed frontend:
+
+- **API Docs**: Visit [http://localhost:8000/docs](http://localhost:8000/docs) for the Swagger UI.
+- **Web Frontend**: Access the live client at [https://port-cast-front-end.vercel.app/](https://port-cast-front-end.vercel.app/)
+
 ## 🏗️ System Architecture
 
 ### Technology Stack
